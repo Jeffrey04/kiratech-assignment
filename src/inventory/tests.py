@@ -74,29 +74,29 @@ class InventoryTestCase(TestCase):
         self.assertTrue("stock" not in result[0])
 
         # check relevant record is returned properly
-        self.assertEqual(result[0]["id"], inventory1.id)
+        self.assertEqual(result[0]["id"], inventory1.pk)
         self.assertEqual(result[0]["name"], inventory1.name)
         self.assertEqual(result[0]["availability"], inventory1.availability)
         self.assertEqual(result[0]["supplier"], inventory1.supplier.name)
 
-        response = client.get(f"/api/inventory/?description=new")
+        response = client.get("/api/inventory/?description=new")
         result = response.json()
 
         self.assertEqual(response.status_code, 200)
         self.assertTrue(len(result) == 1)
 
-        self.assertEqual(result[0]["id"], inventory2.id)
+        self.assertEqual(result[0]["id"], inventory2.pk)
         self.assertEqual(result[0]["name"], inventory2.name)
         self.assertEqual(result[0]["availability"], inventory2.availability)
         self.assertEqual(result[0]["supplier"], inventory2.supplier.name)
 
-        response = client.get(f"/api/inventory/?note=some")
+        response = client.get("/api/inventory/?note=some")
         result = response.json()
 
         self.assertEqual(response.status_code, 200)
         self.assertTrue(len(result) == 1)
 
-        self.assertEqual(result[0]["id"], inventory1.id)
+        self.assertEqual(result[0]["id"], inventory1.pk)
         self.assertEqual(result[0]["name"], inventory1.name)
         self.assertEqual(result[0]["availability"], inventory1.availability)
         self.assertEqual(result[0]["supplier"], inventory1.supplier.name)
