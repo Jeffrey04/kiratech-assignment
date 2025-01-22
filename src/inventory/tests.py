@@ -12,6 +12,21 @@ class InventoryTestCase(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTrue("Inventory List" in response.content.decode("utf-8"))
 
+        Inventory.objects.create(
+            name="Foo",
+            description="Some description",
+            note="Some note",
+            stock=100,
+            availability=True,
+            supplier=Supplier.objects.create(name="Some supplier"),
+        )
+
+        response = client.get("/inventory/")
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue("Inventory List" in response.content.decode("utf-8"))
+        self.assertTrue("Foo" in response.content.decode("utf-8"))
+        self.assertTrue("Some supplier" in response.content.decode("utf-8"))
+
     def test_inventory_detail(self) -> None:
         client = Client()
 
