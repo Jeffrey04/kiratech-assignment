@@ -26,7 +26,9 @@ SECRET_KEY = "django-insecure-pix#=y7mlld$lnsr!g79a39yg3*ny^ctyhpz3kg2ls+%388fpb
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [host.strip() for host in environ.get("ALLOWED_HOSTS", "").split(",")]
+ALLOWED_HOSTS = [
+    host.strip() for host in environ.get("ALLOWED_HOSTS", "localhost").split(",")
+]
 
 
 # Application definition
