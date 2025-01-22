@@ -18,6 +18,13 @@ source .venv/bin/activate
 ./manage.py runserver 8081
 ```
 
+Execute the migration
+
+```
+source .venv/bin/activate
+./manage.py migrate
+```
+
 ## Starting through docker
 
 A development image is made available via github actions, it can be found at
