@@ -88,7 +88,7 @@ The tests for inventory app can be done with the following command
 
 ```
 source .venv/bin/activate
-./manage.py test inventory
+./manage.py test kiratech_assignment.inventory
 ```
 
 

@@ -1,6 +1,6 @@
 from django.test import Client, TestCase
 
-from inventory.models import Inventory, Supplier
+from kiratech_assignment.inventory.models import Inventory, Supplier
 
 
 # Create your tests here.

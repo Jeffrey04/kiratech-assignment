@@ -5,13 +5,15 @@ WORKDIR /app
 COPY . .
 
 RUN uv sync --frozen --no-editable --no-dev --compile-bytecode && \
-    uv pip install -e .
+    # distroless's cpython is in /usr/bin/python
+    rm /app/.venv/bin/python && \
+    ln -s /usr/bin/python /app/.venv/bin/python
 
-# FIXME find out how to properly add libraries without requiring pyproject
-#FROM gcr.io/distroless/python3-debian12:debug
-#
-#EXPOSE 8081/tcp
-#
-#COPY --from=builder /app/.venv /app/.venv
 
-ENTRYPOINT ["/app/.venv/bin/gunicorn", "-b", "0.0.0.0:8081", "kiratech.wsgi"]
+FROM gcr.io/distroless/python3-debian12
+
+EXPOSE 8081/tcp
+
+COPY --from=builder /app/.venv /app/.venv
+
+ENTRYPOINT ["/app/.venv/bin/gunicorn", "-b", "0.0.0.0:8081", "kiratech_assignment.wsgi"]
