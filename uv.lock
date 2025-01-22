@@ -1,6 +1,13 @@
 version = 1
 requires-python = ">=3.11"
 
+[manifest]
+members = [
+    "inventory",
+    "kiratech",
+    "kiratech-assignment",
+]
+
 [[package]]
 name = "asgiref"
 version = "3.8.1"
@@ -59,6 +66,16 @@ sdist = { url = "https://files.pythonhosted.org/packages/34/72/9614c465dc206155d
 wheels = [
     { url = "https://files.pythonhosted.org/packages/cb/7d/6dac2a6e1eba33ee43f318edbed4ff29151a49b5d37f080aad1e6469bca4/gunicorn-23.0.0-py3-none-any.whl", hash = "sha256:ec400d38950de4dfd418cff8328b2c8faed0edb0d517d3394e457c317908ca4d", size = 85029 },
 ]
+
+[[package]]
+name = "inventory"
+version = "0.1.0"
+source = { virtual = "src/inventory" }
+
+[[package]]
+name = "kiratech"
+version = "0.1.0"
+source = { virtual = "src/kiratech" }
 
 [[package]]
 name = "kiratech-assignment"

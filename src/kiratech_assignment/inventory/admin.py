@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from inventory.models import Inventory, Supplier
+from kiratech_assignment.inventory.models import Inventory, Supplier
 
 
 @admin.register(Inventory)

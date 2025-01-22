@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "inventory",
+    "kiratech_assignment.inventory",
     "django_filters",
 ]
 
@@ -54,7 +54,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "kiratech.urls"
+ROOT_URLCONF = "kiratech_assignment.urls"
 
 TEMPLATES = [
     {
@@ -72,7 +72,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "kiratech.wsgi.application"
+WSGI_APPLICATION = "kiratech_assignment.wsgi.application"
 
 
 # Database

@@ -5,8 +5,8 @@ from django.shortcuts import render
 from django_filters import rest_framework as filters
 from rest_framework import generics
 
-from inventory.models import Inventory
-from inventory.serializers import InventorySerializer
+from kiratech_assignment.inventory.models import Inventory
+from kiratech_assignment.inventory.serializers import InventorySerializer
 
 
 class InventoryFilter(filters.FilterSet):

@@ -18,10 +18,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
-from inventory.views import InventoryList
+from kiratech_assignment.inventory.views import InventoryList
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("inventory/", include("inventory.urls")),
+    path("inventory/", include("kiratech_assignment.inventory.urls")),
     path("api/inventory/", InventoryList.as_view()),
 ]
