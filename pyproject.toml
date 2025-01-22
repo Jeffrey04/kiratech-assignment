@@ -1,0 +1,18 @@
+[project]
+name = "kiratech-assignment"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Jeffrey04", email = "mycyberpet@yahoo.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "django>=5.1.5",
+    "django-filter>=24.3",
+    "djangorestframework>=3.15.2",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
